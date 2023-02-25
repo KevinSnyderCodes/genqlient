@@ -263,6 +263,13 @@ func (g *generator) convertType(
 		// Note this does []*T or [][]*T, not e.g. *[][]T.  See #16.
 		goTyp = &goPointerType{goTyp}
 	}
+
+	if g.Config.AlwaysPointer {
+		if _, ok := goTyp.(*goPointerType); !ok {
+			goTyp = &goPointerType{goTyp}
+		}
+	}
+
 	return goTyp, err
 }
 

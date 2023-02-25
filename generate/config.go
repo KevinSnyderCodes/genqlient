@@ -32,6 +32,7 @@ type Config struct {
 	Bindings         map[string]*TypeBinding `yaml:"bindings"`
 	PackageBindings  []*PackageBinding       `yaml:"package_bindings"`
 	Optional         string                  `yaml:"optional"`
+	AlwaysPointer    bool                    `yaml:"always_pointer"`
 	StructReferences bool                    `yaml:"use_struct_references"`
 	Extensions       bool                    `yaml:"use_extensions"`
 
